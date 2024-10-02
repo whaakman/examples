@@ -18,3 +18,15 @@ spec:
         resources: {}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-svc
+spec:
+  selector:
+    app: demo-nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
